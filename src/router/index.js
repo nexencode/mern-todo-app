@@ -7,6 +7,9 @@ const auth = require('./auth');
 
 const mainRouter = Router();
 
+// This will anable that all routs under the main route automaticlly parsed 
+mainRouter.use(express.json());
+
 
 mainRouter.use(auth.path, auth.router);
 

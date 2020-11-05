@@ -1,7 +1,7 @@
 const database = require('./modules/database');
 const chalk = require('chalk');
 const config = require('./config');
-const router = require('./router');
+
 
 // Chalk colors
 const errorColor = chalk.bgRed.bold;
@@ -19,7 +19,9 @@ const successColor = chalk.bgGreen.bold;
     console.info('---------------------');
 
     console.info('Creating the express app...');
+    
     const express = require('express');
+    const router = require('./router');
     const app = express();
 
     console.info('---------------------');
@@ -34,5 +36,5 @@ const successColor = chalk.bgGreen.bold;
     app.listen(config.app.port, () => {
         console.info(successColor(`Server listening on port: ${config.app.port}...`));
     })
-    
+    console.info('---------------------');
 })();
