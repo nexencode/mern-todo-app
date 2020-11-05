@@ -1,7 +1,7 @@
 const database = require('./modules/database');
 const chalk = require('chalk');
 const config = require('./config');
-
+const cookieParser = require('cookie-parser');
 
 // Chalk colors
 const errorColor = chalk.bgRed.bold;
@@ -19,7 +19,7 @@ const successColor = chalk.bgGreen.bold;
     console.info('---------------------');
 
     console.info('Creating the express app...');
-    
+
     const express = require('express');
     const router = require('./router');
     const app = express();
@@ -27,6 +27,7 @@ const successColor = chalk.bgGreen.bold;
     console.info('---------------------');
 
     console.info('Registering the routes....');
+    app.use(cookieParser());
     app.use(router.path, router.router);
 
     console.info('---------------------');

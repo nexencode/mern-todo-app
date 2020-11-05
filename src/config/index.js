@@ -9,7 +9,7 @@ const config = Object.freeze({
         password: 'sedcpass'
     },
     auth: {
-        secret: 'porsecretforjwt',
+        secret: 'oursecretforjwt',
         jwtExpiresIn: '1h',
         authCookieName: 'auth',
         authCookieAgeInSeconds: 3600
