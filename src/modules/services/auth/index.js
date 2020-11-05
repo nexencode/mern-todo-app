@@ -19,7 +19,8 @@ class AuthService {
     }
 
     static async verifyTokenAndGetUserId(token) {
-        return JWT.verify(toke, config.auth.secret);
+        const decodedToken = JWT.verify(token, config.auth.secret);
+        return decodedToken.sub;
     }
 
 
